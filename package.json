@@ -1,0 +1,29 @@
+{
+  "name": "snips",
+  "version": "1.0.0",
+  "description": "Gist backed commandline snippet utility",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srijanshetty/snips.git"
+  },
+  "keywords": [
+    "gist",
+    "snippets",
+    "code"
+  ],
+  "author": "Srijan R Shetty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/srijanshetty/snips/issues"
+  },
+  "homepage": "https://github.com/srijanshetty/snips#readme",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "commander": "^2.8.1",
+    "lodash": "^3.9.3"
+  }
+}
