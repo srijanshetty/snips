@@ -27,7 +27,7 @@ program
 
         // Check if there exists a snippet with the given name
         if (fs.existsSync(fileName)) {
-            error('Snippet Exists');
+            error('Snippet already exists');
             process.exit(1);
         }
 
@@ -52,6 +52,34 @@ program
                 console.log(item);
             });
         });
+    });
+
+// Copy a snippet to the clipboard
+program
+    .command('copy [snippet-name]')
+    .description('Copy snippet to clipboard if it exists')
+    .action(function (snippetName) {
+        // Generate fileName
+        var fileName = path.join(snippetsRoot, snippetName);
+
+        // Check if there exists a snippet with the given name
+        if (!fs.existsSync(fileName)) {
+            process.exit(0);
+        }
+
+        // Get the text from the file
+        var text = fs.readFileSync(fileName).toString();
+
+        // Copy the text to clipboard
+        require('copy-paste').copy(text, function() { process.exit(0); });
+    });
+
+// Search for a string in all snippets
+program
+    .command('search <search-terms>')
+    .description('Search snippets for given search term')
+    .action(function(searchTerm) {
+
     });
 
 // Parse arguments
