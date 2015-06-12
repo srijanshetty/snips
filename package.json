@@ -29,6 +29,6 @@
   },
   "preferGlobal": "true",
   "bin": {
-    "snips" : "app.js"
+    "snips": "app.js"
   }
 }
