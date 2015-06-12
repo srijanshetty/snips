@@ -10,8 +10,13 @@ program
     .version(JSON.parse(require('fs').readFileSync('package.json')).version);
 
 program
-    .command('create [snippet-name]')
+    .command('new [snippet-name]')
     .description('Create a code snippet with given name')
+    .action(functions.createSnippet);
+
+program
+    .command('edit [snippet-name]')
+    .description('Edit an existing code snippet')
     .action(functions.createSnippet);
 
 program
