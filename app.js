@@ -7,7 +7,7 @@ var program = require('commander');
 var functions = require('./lib/functions.js');
 
 program
-    .version(JSON.parse(require('fs').readFileSync('package.json')).version);
+    .version('1.0.0');
 
 program
     .command('new [snippet-name]')
@@ -29,10 +29,10 @@ program
     .description('Copy snippet to clipboard if it exists')
     .action(functions.copySnippet);
 
-program
-    .command('search <search-terms>')
-    .description('Search snippets for given search term')
-    .action(functions.searchSnippets);
+// By default display all the snips
+if (!process.argv.slice(2).length) {
+    functions.listSnippets();
+}
 
 // Parse arguments
 program.parse(process.argv);
