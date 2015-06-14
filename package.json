@@ -1,5 +1,5 @@
 {
-  "name": "snips",
+  "name": "snips-cli",
   "version": "1.0.0",
   "description": "Gist backed commandline snippet utility",
   "main": "app.js",
@@ -25,7 +25,6 @@
     "chalk": "^1.0.0",
     "commander": "^2.8.1",
     "copy-paste": "^1.1.2",
-    "fuzzy": "^0.1.0",
     "lodash": "^3.9.3"
   },
   "preferGlobal": "true",
