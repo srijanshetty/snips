@@ -1,0 +1,39 @@
+#compdef snips
+
+local state expl ret=1
+local -a snips commands
+
+snips=( $(command ls -1 --color=never ${HOME}/.snips) )
+
+commands=(
+  'list:List snips'
+  'new:Create a new snip'
+  'edit:Edit snip'
+  'copy:Copy snip'
+)
+
+_arguments \
+  '1:cmd:->cmds' \
+  '*::arg:->args' \
+&& ret=0
+
+case "$state" in
+  cmds)
+    _wanted snips expl "snips" compadd "$snips[@]"
+    _describe -t commands 'commands' commands && ret=0
+  ;;
+  args)
+    case "$words[1]" in
+      edit|copy)
+        _arguments \
+          '*:snips:($snips)' && ret=0
+        ;;
+      new)
+        _arguments \
+          '*:insert new name for your snip:' && ret=0
+        ;;
+      *)
+        (( ret )) && _message 'no more arguments'
+        ;;
+    esac
+esac
