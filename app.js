@@ -6,6 +6,8 @@ var program = require('commander');
 // The functionalities
 var functions = require('./lib/functions.js');
 
+functions.checkFiles();
+
 program
     .version('1.0.0');
 
