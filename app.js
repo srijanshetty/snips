@@ -6,6 +6,7 @@ var program = require('commander');
 // The functionalities
 var functions = require('./lib/functions.js');
 
+// Check for snippetsRoot and snippetsFolder
 functions.checkFiles();
 
 program
