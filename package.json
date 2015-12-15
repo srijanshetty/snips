@@ -1,6 +1,6 @@
 {
   "name": "snips-cli",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "description": "Gist backed commandline snippet utility",
   "main": "app.js",
   "scripts": {

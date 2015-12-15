@@ -20,7 +20,7 @@ program
 program
     .command('edit [snippet-name]')
     .description('Edit an existing code snippet')
-    .action(functions.createSnippet);
+    .action(functions.editSnippet);
 
 program
     .command('list')
