@@ -49,8 +49,9 @@ Use [fzf](https://github.com/junegunn/fzf).
 ## TODO
 
 - [x] collect metadata using yaml-frontmatter.
-- [] search metadata.
-- [] gist support.
+- [ ] edit metadata.
+- [ ] search metadata.
+- [ ] gist support.
 
 ## Credits
 I've tried to mimic most of the features of [sheets](https://github.com/oscardelben/sheet), and add a couple on top. While `sheets` is awesome, I didn't know `ruby` enough to directly hack on it.
