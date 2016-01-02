@@ -12,7 +12,7 @@
 ## Install
 
 ```bash
-npm install snips-cli
+npm install -g snips-cli
 ```
 
 ## Examples
