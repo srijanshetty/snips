@@ -46,6 +46,10 @@ Use [fzf](https://github.com/junegunn/fzf).
 
     snips list | fzf
 
+**Use snips in multiple machines**
+
+Backup `.snips` in `git`.
+
 ## TODO
 
 - [x] collect metadata using yaml-frontmatter.
