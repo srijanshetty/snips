@@ -4,7 +4,8 @@
   "description": "Gist backed commandline snippet utility",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "run": "node app.js",
+    "lint": "eslint -c package.json ./**/*.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,8 @@
   "keywords": [
     "gist",
     "snippets",
-    "code"
+    "code",
+    "snips"
   ],
   "author": "Srijan R Shetty",
   "license": "MIT",
@@ -29,8 +31,56 @@
     "lodash": "^4.17.15",
     "shelljs": "^0.5.1"
   },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "eslint-plugin-node": "^11.0.0",
+    "husky": "^3.0.8"
+  },
   "preferGlobal": "true",
   "bin": {
     "snips": "app.js"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:node/recommended"
+    ]
+  },
+  "prettier": {
+      "semi": true,
+      "singleQuote": true,
+      "trailingComma": "es5"
+  },
+  "commitlint": {
+      "extends": [
+          "@commitlint/config-conventional"
+      ],
+      "rules": {
+          "type-enum": [
+              1,
+              "always",
+              [
+                  "build",
+                  "cfg",
+                  "chore",
+                  "docs",
+                  "feat",
+                  "fix",
+                  "lint",
+                  "refactor",
+                  "revert"
+              ]
+          ]
+      }
+  },
+  "husky": {
+      "hooks": {
+          "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+          "pre-push": "npm run lint"
+      }
   }
 }
