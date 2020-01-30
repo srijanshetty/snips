@@ -4,8 +4,10 @@
   "description": "Gist backed commandline snippet utility",
   "main": "app.js",
   "scripts": {
-    "run": "node app.js",
-    "lint": "eslint -c package.json ./src/**/*.ts; npx tsc"
+    "lint": "eslint -c package.json ./src/**/*.ts",
+    "build": "tsc --outdir bin",
+    "test": "npm run lint",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -41,12 +43,11 @@
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^3.1.0",
     "prettier": "^1.19.1",
-    "ts-node": "^8.5.4",
     "typescript": "^3.7.4"
   },
   "preferGlobal": "true",
   "bin": {
-    "snips": "ts-node src/app.ts"
+    "snips": "./bin/app.js"
   },
   "eslintConfig": {
     "env": {
@@ -100,8 +101,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run lint"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && npm run test"
     }
   }
 }
