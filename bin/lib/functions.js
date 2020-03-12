@@ -5,7 +5,7 @@ const tslib_1 = require("tslib");
 const fs_1 = tslib_1.__importDefault(require("fs"));
 const path_1 = tslib_1.__importDefault(require("path"));
 const child_process_1 = tslib_1.__importDefault(require("child_process"));
-const copy_to_clipboard_1 = tslib_1.__importDefault(require("copy-to-clipboard"));
+const clipboardy_1 = tslib_1.__importDefault(require("clipboardy"));
 const front_matter_1 = tslib_1.__importDefault(require("front-matter"));
 const helpers_1 = tslib_1.__importDefault(require("./helpers"));
 const fuzzy_list_1 = require("./fuzzy-list");
@@ -34,7 +34,7 @@ const _copySnip = (snippetName) => {
         throw new Error('Snippet with given name does not exist');
     }
     const text = fs_1.default.readFileSync(fileName).toString();
-    copy_to_clipboard_1.default(text);
+    clipboardy_1.default.writeSync(text);
 };
 function createSnippet(snippetName) {
     const fileName = path_1.default.join(snippetsRoot, snippetName);

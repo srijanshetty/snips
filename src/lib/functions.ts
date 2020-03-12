@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import childProcess from 'child_process';
 
-import copy from 'copy-to-clipboard';
+import clipboardy from 'clipboardy';
 import frontmatter from 'front-matter';
 
 import helper from './helpers';
@@ -47,7 +47,7 @@ const _copySnip = (snippetName: string) => {
   const text = fs.readFileSync(fileName).toString();
 
   // Copy the text to clipboard
-  copy(text);
+  clipboardy.writeSync(text);
 };
 
 // Function to create a snippet with the given name
