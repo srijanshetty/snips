@@ -56,7 +56,11 @@ Backup `.snips` in `git`.
 - [x] collect metadata using yaml-frontmatter.
 - [ ] edit metadata.
 - [ ] search metadata.
-- [ ] gist support.
+
+## Non Goals
+- gist support.
+- git support.
+- content search in snips
 
 ## Credits
 I've tried to mimic most of the features of [sheets](https://github.com/oscardelben/sheet), and add a couple on top. While `sheets` is awesome, I didn't know `ruby` enough to directly hack on it.
