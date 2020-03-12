@@ -11,3 +11,5 @@ declare module 'front-matter' {
 
   export default frontmatter;
 }
+
+declare module 'node-fzf';

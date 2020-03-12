@@ -11,7 +11,7 @@ program
   .action(functions.createSnippet);
 
 program
-  .command('edit [snippet-name]')
+  .command('edit [snippet-name?]')
   .description('Edit an existing code snippet')
   .action(functions.editSnippet);
 
@@ -21,7 +21,7 @@ program
   .action(functions.listSnippets);
 
 program
-  .command('copy [snippet-name]')
+  .command('copy [snippet-name?]')
   .description('Copy snippet to clipboard if it exists')
   .action(functions.copySnippet);
 

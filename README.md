@@ -21,8 +21,8 @@ npm install -g snips-cli
 snips                           # with no arguments it will just list all your snips.
 snips list                      # lists all your snips.
 snips new <snip-name>           # create <snip-name> snip
-snips edit <snip-name>          # edit <snip-name> snip
-snips copy <snip-name>          # Copies content of the snip to the clipboard.
+snips edit <snip-name?>         # edit <snip-name> snip, fuzzy completion if snip-name is skipped
+snips copy <snip-name?>         # Copies content of the snip to the clipboard, fuzzy completion if snip-name is skipped
 ```
 
 ## Behind the scenes
@@ -42,9 +42,10 @@ Use grep or ag.
 
 **Fuzzy Search snippet-names**
 
-Use [fzf](https://github.com/junegunn/fzf).
+copy and edit support fuzzy completion out of the box
 
-    snips list | fzf
+    snips copy
+    snips edit
 
 **Use snips in multiple machines**
 

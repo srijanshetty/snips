@@ -10,7 +10,7 @@ commander_1.default
     .description('Create a code snippet with given name')
     .action(functions_1.default.createSnippet);
 commander_1.default
-    .command('edit [snippet-name]')
+    .command('edit [snippet-name?]')
     .description('Edit an existing code snippet')
     .action(functions_1.default.editSnippet);
 commander_1.default
@@ -18,7 +18,7 @@ commander_1.default
     .description('List all snippets')
     .action(functions_1.default.listSnippets);
 commander_1.default
-    .command('copy [snippet-name]')
+    .command('copy [snippet-name?]')
     .description('Copy snippet to clipboard if it exists')
     .action(functions_1.default.copySnippet);
 if (!process.argv.slice(2).length) {
