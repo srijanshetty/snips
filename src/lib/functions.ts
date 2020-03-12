@@ -102,7 +102,7 @@ function createSnippet(snippetName: string) {
 
 // Function to list snippets from the snips directory
 function listSnippets() {
-  _listSnips().forEach(console.log);
+  _listSnips().forEach(item => console.log(item));
 }
 
 // Function to edit a snippet

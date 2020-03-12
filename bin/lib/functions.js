@@ -70,7 +70,7 @@ function createSnippet(snippetName) {
     });
 }
 function listSnippets() {
-    _listSnips().forEach(console.log);
+    _listSnips().forEach(item => console.log(item));
 }
 function editSnippet(snippetName) {
     if (snippetName) {
