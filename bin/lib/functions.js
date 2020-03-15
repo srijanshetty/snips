@@ -9,8 +9,8 @@ const clipboardy_1 = tslib_1.__importDefault(require("clipboardy"));
 const front_matter_1 = tslib_1.__importDefault(require("front-matter"));
 const helpers_1 = tslib_1.__importDefault(require("./helpers"));
 const fuzzy_list_1 = require("./fuzzy-list");
-const HOME = (_a = process.env.HOME, (_a !== null && _a !== void 0 ? _a : '~'));
-const EDITOR = (_b = process.env.EDITOR, (_b !== null && _b !== void 0 ? _b : 'vim'));
+const HOME = (_a = process.env.HOME) !== null && _a !== void 0 ? _a : '~';
+const EDITOR = (_b = process.env.EDITOR) !== null && _b !== void 0 ? _b : 'vim';
 const snippetsRoot = path_1.default.join(HOME, '.snips');
 const snippetsIndex = path_1.default.join(HOME, '.snipsIndex');
 const _listSnips = () => {
