@@ -6,7 +6,6 @@ const fs_1 = tslib_1.__importDefault(require("fs"));
 const path_1 = tslib_1.__importDefault(require("path"));
 const child_process_1 = tslib_1.__importDefault(require("child_process"));
 const clipboardy_1 = tslib_1.__importDefault(require("clipboardy"));
-const front_matter_1 = tslib_1.__importDefault(require("front-matter"));
 const helpers_1 = tslib_1.__importDefault(require("./helpers"));
 const fuzzy_list_1 = require("./fuzzy-list");
 const HOME = (_a = process.env.HOME) !== null && _a !== void 0 ? _a : '~';
@@ -40,33 +39,8 @@ function createSnippet(snippetName) {
     const fileName = path_1.default.join(snippetsRoot, snippetName);
     const template = '---\ntags: []\nlanguage:\n---\n\n';
     fs_1.default.writeFileSync(fileName, template);
-    const editor = child_process_1.default.spawn(EDITOR, [fileName], {
+    child_process_1.default.spawn(EDITOR, [fileName], {
         stdio: 'inherit',
-    });
-    editor.on('exit', () => {
-        fs_1.default.readFile(fileName, 'utf8', (err, data) => {
-            if (err) {
-                helpers_1.default.error('Filesystem error');
-                fs_1.default.unlinkSync(fileName);
-                throw new Error('Filesystem error');
-            }
-            const content = front_matter_1.default(data);
-            const body = content.body;
-            const metadata = {
-                tags: content.attributes.tags,
-                language: content.attributes.language,
-            };
-            fs_1.default.writeFile(fileName, body, () => {
-                if (err) {
-                    helpers_1.default.error('could not write contents to file');
-                    fs_1.default.unlinkSync(fileName);
-                    throw new Error('could not write contents to file');
-                }
-                const index = JSON.parse(fs_1.default.readFileSync(snippetsIndex, 'utf-8'));
-                index[fileName] = metadata;
-                fs_1.default.writeFileSync(snippetsIndex, JSON.stringify(index));
-            });
-        });
     });
 }
 function listSnippets() {

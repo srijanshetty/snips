@@ -52,10 +52,7 @@ copy and edit support fuzzy completion out of the box
 Backup `.snips` in `git`.
 
 ## TODO
-
-- [x] collect metadata using yaml-frontmatter.
-- [ ] edit metadata.
-- [ ] search metadata.
+- [ ] Add screengrabs
 
 ## Non Goals
 - gist support.
