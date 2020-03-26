@@ -11,7 +11,6 @@ const fuzzy_list_1 = require("./fuzzy-list");
 const HOME = (_a = process.env.HOME) !== null && _a !== void 0 ? _a : '~';
 const EDITOR = (_b = process.env.EDITOR) !== null && _b !== void 0 ? _b : 'vim';
 const snippetsRoot = path_1.default.join(HOME, '.snips');
-const snippetsIndex = path_1.default.join(HOME, '.snipsIndex');
 const _listSnips = () => {
     try {
         return fs_1.default.readdirSync(snippetsRoot);
@@ -65,7 +64,6 @@ function copySnippet(snippetName) {
 function checkFiles() {
     try {
         fs_1.default.mkdirSync(snippetsRoot);
-        fs_1.default.writeFileSync(snippetsIndex, '[]');
     }
     catch (e) {
         if (e.code !== 'EEXIST') {

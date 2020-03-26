@@ -90,7 +90,6 @@ function copySnippet(snippetName: string | undefined) {
 function checkFiles() {
   try {
     fs.mkdirSync(snippetsRoot);
-    fs.writeFileSync(snippetsIndex, '[]');
   } catch (e) {
     if (e.code !== 'EEXIST') {
       throw e;
