@@ -4,9 +4,9 @@
   "description": "Gist backed commandline snippet utility",
   "main": "app.js",
   "scripts": {
-    "lint": "eslint -c package.json ./src/**/*.ts",
+    "test": "eslint -c package.json ./src/**/*.ts",
     "build": "tsc --outdir bin",
-    "test": "npm run lint"
+    "deploy": "npm run build && np"
   },
   "repository": {
     "type": "git",
