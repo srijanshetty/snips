@@ -25,6 +25,9 @@ snips edit <snip-name?>         # edit <snip-name> snip, fuzzy completion if sni
 snips copy <snip-name?>         # Copies content of the snip to the clipboard, fuzzy completion if snip-name is skipped
 ```
 
+## Live
+![](snips.gif)
+
 ## Behind the scenes
 All snips are stored in `~/.snips` directory. You can play around with them to your hearts content without adversely affecting the functioning of `snips`.
 
@@ -52,7 +55,6 @@ copy and edit support fuzzy completion out of the box
 Backup `.snips` in `git`.
 
 ## TODO
-- [ ] Add screengrabs
 
 ## Non Goals
 - gist support.
