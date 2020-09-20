@@ -49,7 +49,7 @@ const _copySnip = (snippetName: string) => {
 };
 
 // Function to create a snippet with the given name
-function createSnippet(snippetName: string) {
+function createSnippet(snippetName: string): void {
   // Generate fileName
   const fileName = path.join(snippetsRoot, snippetName);
 
@@ -64,12 +64,12 @@ function createSnippet(snippetName: string) {
 }
 
 // Function to list snippets from the snips directory
-function listSnippets() {
-  _listSnips().forEach(item => console.log(item));
+function listSnippets(): void {
+  _listSnips().forEach((item) => console.log(item));
 }
 
 // Function to edit a snippet
-function editSnippet(snippetName: string | undefined) {
+function editSnippet(snippetName: string | undefined): void {
   if (snippetName) {
     _editSnip(snippetName);
   } else {
@@ -78,7 +78,7 @@ function editSnippet(snippetName: string | undefined) {
 }
 
 // Function to copy a snippet
-function copySnippet(snippetName: string | undefined) {
+function copySnippet(snippetName: string | undefined): void {
   if (snippetName) {
     _copySnip(snippetName);
   } else {
@@ -87,7 +87,7 @@ function copySnippet(snippetName: string | undefined) {
 }
 
 // Create the snips directory and root
-function checkFiles() {
+function checkFiles(): void {
   try {
     fs.mkdirSync(snippetsRoot);
   } catch (e) {

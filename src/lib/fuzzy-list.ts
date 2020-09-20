@@ -8,7 +8,7 @@ type fzfResult = {
   query: string;
 };
 
-const fuzzyProcess = (fn: (item: string) => void, items: string[]) => {
+const fuzzyProcess = (fn: (item: string) => void, items: string[]): void => {
   nfzf(items, (result: fzfResult) => {
     const { selected, query } = result;
 
