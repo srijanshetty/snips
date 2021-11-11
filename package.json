@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/srijanshetty/snips/issues"
   },
-  "homepage": "https://github.com/srijanshetty/snips#readme",
+  "homepage": "https://srijanshetty.in",
   "dependencies": {
     "chalk": "^3.0.0",
     "clipboardy": "^2.2.0",
