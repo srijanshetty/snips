@@ -6,7 +6,8 @@
   "scripts": {
     "test": "eslint -c package.json ./src/**/*.ts",
     "build": "tsc --outdir bin",
-    "deploy": "npm run build && np"
+    "deploy": "npm run build && np",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -28,23 +29,23 @@
     "chalk": "^3.0.0",
     "clipboardy": "^2.2.0",
     "commander": "^4.1.0",
-    "lodash": "^4.17.15",
-    "node-fzf": "^0.6.0",
-    "tslib": "^1.10.0"
+    "lodash": "^4.17.21",
+    "node-fzf": "^0.11.0",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "@types/node": "^13.5.2",
-    "@typescript-eslint/eslint-plugin": "^2.14.0",
-    "@typescript-eslint/parser": "^2.14.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^3.1.0",
-    "np": "^5.2.1",
-    "prettier": "^1.19.1",
-    "typescript": "^3.7.4"
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "np": "^7.6.2",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   },
   "preferGlobal": "true",
   "bin": {
@@ -61,11 +62,10 @@
     ],
     "extends": [
       "plugin:@typescript-eslint/recommended",
-      "prettier/@typescript-eslint",
       "plugin:prettier/recommended"
     ],
     "parserOptions": {
-      "ecmaVersion": 2018,
+      "ecmaVersion": 2022,
       "sourceType": "module"
     },
     "rules": {
@@ -98,12 +98,6 @@
           "revert"
         ]
       ]
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && npm run test",
-      "pre-push": "npm run build"
     }
   }
 }

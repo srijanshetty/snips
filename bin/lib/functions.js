@@ -43,14 +43,14 @@ function createSnippet(snippetName) {
     });
 }
 function listSnippets() {
-    _listSnips().forEach(item => console.log(item));
+    _listSnips().forEach((item) => console.log(item));
 }
 function editSnippet(snippetName) {
     if (snippetName) {
         _editSnip(snippetName);
     }
     else {
-        fuzzy_list_1.fuzzyProcess(_editSnip, _listSnips());
+        (0, fuzzy_list_1.fuzzyProcess)(_editSnip, _listSnips());
     }
 }
 function copySnippet(snippetName) {
@@ -58,7 +58,7 @@ function copySnippet(snippetName) {
         _copySnip(snippetName);
     }
     else {
-        fuzzy_list_1.fuzzyProcess(_copySnip, _listSnips());
+        (0, fuzzy_list_1.fuzzyProcess)(_copySnip, _listSnips());
     }
 }
 function checkFiles() {

@@ -65,7 +65,7 @@ function createSnippet(snippetName: string) {
 
 // Function to list snippets from the snips directory
 function listSnippets() {
-  _listSnips().forEach(item => console.log(item));
+  _listSnips().forEach((item) => console.log(item));
 }
 
 // Function to edit a snippet
@@ -90,7 +90,7 @@ function copySnippet(snippetName: string | undefined) {
 function checkFiles() {
   try {
     fs.mkdirSync(snippetsRoot);
-  } catch (e) {
+  } catch (e: any) {
     if (e.code !== 'EEXIST') {
       throw e;
     }
